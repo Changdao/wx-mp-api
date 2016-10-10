@@ -1,0 +1,30 @@
+{
+  "name": "wx-mp-api",
+  "version": "0.2.0",
+  "description": "An node interface for WeChat MP platform development;",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Changdao/wx-mp-api.git"
+  },
+  "keywords": [
+    "Node.js",
+    "backend",
+    "WeChat",
+    "MP",
+    "API",
+    "Developent"
+  ],
+  "author": "Changdao",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Changdao/wx-mp-api/issues"
+  },
+  "homepage": "https://github.com/Changdao/wx-mp-api#readme",
+  "dependencies": {
+    "bluebird": "^3.4.6"
+  }
+}
