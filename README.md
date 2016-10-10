@@ -13,7 +13,8 @@ Instantiate:
     var WXAPI = require('wx-mp-api');
     var wxapi = new WXAPI({
         appId:"you-appid-get-from-WeChat-mp-account",
-        secret:"you-secret-get-from-WeChat-mp-account"
+        secret:"you-secret-get-from-WeChat-mp-account",
+	refreshInterval:3600000   //option to control the wechat token refresh interval, default 1 hour.
         });
 
 
