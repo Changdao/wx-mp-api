@@ -19,8 +19,14 @@ Instantiate:
 
 
 ##Methods
-
-    buildWXAuthURL(url,method)
+    <strong>verifySite(signature,timestamp,nonce);</strong>
+    微信设置开发配置时，需要应用进行确认操作，verifySite简单封装了排序和加密处理。
+    Usage:
+        router.get('/verify',function(req,res){
+             return verifySite(req.query.signature,req.query.timestamp,req.query.nonce)?req.query.echostr:'';
+	});
+    
+    <strong>buildWXAuthURL(url,method)</strong>
     method could be 'sns_base' or 'sns_userinfo'
 
     requreUserInfo() 
