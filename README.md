@@ -12,8 +12,7 @@ wx-mp-api is an interface for node.js to access WeChat MP platform service. wx-m
 ##Usage
 
 Create instance: 
-<pre>    
-    /*
+<pre>    /*
         create the WXAPI instance in your node.js server side. 
     */
     var WXAPI = require('wx-mp-api');
@@ -21,7 +20,10 @@ Create instance:
         appId:"you-appid-get-from-WeChat-mp-account",
         secret:"you-secret-get-from-WeChat-mp-account",
 	    mptoken:"you-token-set-for-wechat-mp",
-	    refreshInterval:3600000   //option to control the wechat token refresh interval, default 1 hour. Equal or less than 0 indicate that the WXAPI disable automatic update token.
+        //option to control the wechat token refresh interval, default 1 hour. 
+        //Equal or less than 0 indicate that the WXAPI disable automatic update token.
+	    refreshInterval:3600000   
+	    
         });
 </pre>
 
