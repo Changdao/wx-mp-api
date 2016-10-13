@@ -14,8 +14,8 @@ Create instance:
     var wxapi = new WXAPI({
         appId:"you-appid-get-from-WeChat-mp-account",
         secret:"you-secret-get-from-WeChat-mp-account",
-	mptoken:"you-token-set-for-wechat-mp",
-	refreshInterval:3600000   //option to control the wechat token refresh interval, default 1 hour.
+	    mptoken:"you-token-set-for-wechat-mp",
+	    refreshInterval:3600000   //option to control the wechat token refresh interval, default 1 hour. Equal or less than 0 indicate that the WXAPI disable automatic update token.
         });
 
 
@@ -55,5 +55,5 @@ Create instance:
     ###createMenu
 
 ## Todo:
-   ### support more interfaces 
+   ### support more interfaces
        If you need more interface, please let me know.

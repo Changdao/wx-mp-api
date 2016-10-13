@@ -1,6 +1,6 @@
 {
   "name": "wx-mp-api",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "An node interface for WeChat MP platform development;",
   "main": "index.js",
   "scripts": {
