@@ -1,5 +1,8 @@
 # wx-mp-api
 
+[![npm](https://img.shields.io/badge/download-69%2Fmonth-green.svg)](https://www.npmjs.com/package/wx-mp-api)
+[![License](https://img.shields.io/badge/license-MIT-gree.svg)](https://github.com/)
+
 wx-mp-api is an interface for node.js to access WeChat MP platform service. wx-mp-api utilize Bluebird to support promise.
 
 ##Install 
