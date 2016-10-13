@@ -57,7 +57,7 @@ An example for Express:
 
 
 ##Methods
-###<strong>buildWXPageAPIConfig(url)</strong>
+###buildWXPageAPIConfig(url)
     While JavaScript in page try to call WeChat/Wexin bridge, 
     WeChat should verify the page privilege, this method build an object
     to pass to the front, then wx.config can accept it.
@@ -71,7 +71,7 @@ An example for Express:
         }
 
 
-###<strong>verifySite(signature,timestamp,nonce);</strong>
+###verifySite(signature,timestamp,nonce);
     When operator config WeChat MP development association
      to a web site, WeChat will send an request to the site, the Site 
     should verrify the request and response a echo str, this method is 
@@ -81,7 +81,7 @@ An example for Express:
              return verifySite(req.query.signature,req.query.timestamp,req.query.nonce)?req.query.echostr:'';
 	});
     
-###<strong>buildWXAuthURL(url,method)</strong>
+###buildWXAuthURL(url,method)
     method could be 'sns_base' or 'sns_userinfo'
 
 ###requreUserInfo()
