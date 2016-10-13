@@ -9,7 +9,10 @@ wx-mp-api is an interface for node.js to access WeChat MP platform service. wx-m
 ##Usage
 
 Create instance: 
-
+<pre>    
+    /*
+        create the WXAPI instance in your node.js server side. 
+    */
     var WXAPI = require('wx-mp-api');
     var wxapi = new WXAPI({
         appId:"you-appid-get-from-WeChat-mp-account",
@@ -17,13 +20,43 @@ Create instance:
 	    mptoken:"you-token-set-for-wechat-mp",
 	    refreshInterval:3600000   //option to control the wechat token refresh interval, default 1 hour. Equal or less than 0 indicate that the WXAPI disable automatic update token.
         });
+</pre>
+
+An example for Express:
+ <pre>
+    /*
+    * the Node.js/Express side. 
+    */
+    router.get('/wxconfig',function(req,res){
+            var url = req.headers.referrer;
+            res.send(wxapi.buildWXPageAPIConfig(url));
+    }
+ </pre>
+ <pre>
+    /*
+    * the Client Side
+    */
+    $.get('/wxconfig',function(obj){
+        wx.config(obj);
+        wx.ready(function()
+           {
+               //alert('bind address ready');
+               wx.openAddress(
+                   {
+                    //...
+                   });
+        });
+    });
+ </pre>
+        
 
 
 ##Methods
 ###<strong>buildWXPageAPIConfig(url)</strong>
-    产生网页授权配置JSON对象，微信网页访问微信功能需要用到。
+    While JavaScript in page try to call WeChat/Wexin bridge, 
+    WeChat should verify the page privilege, this method build an object
+    to pass to the front, then wx.config can accept it.
     return:
-    <pre>
         {
             "noncestr": "1QNBVBx2u02AGQ0HO1lOeEuggQeYID2e",
             "timestamp": "1476328755",
@@ -32,11 +65,13 @@ Create instance:
             "jsApiList": ["checkJsApi", "openAddress"]
         }
 
-    </pre>
 
 ###<strong>verifySite(signature,timestamp,nonce);</strong>
-    微信设置开发配置时，需要应用进行确认操作，verifySite简单封装了排序和加密处理。
-    Usage:
+    When operator config WeChat MP development association
+     to a web site, WeChat will send an request to the site, the Site 
+    should verrify the request and response a echo str, this method is 
+    for convinient.
+    Usage(for Express):
         router.get('/verify',function(req,res){
              return verifySite(req.query.signature,req.query.timestamp,req.query.nonce)?req.query.echostr:'';
 	});
