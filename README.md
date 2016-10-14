@@ -72,35 +72,33 @@ An example for Express:
 
 
 ###verifySite(signature,timestamp,nonce);
-    When operator config WeChat MP development association
-     to a web site, WeChat will send an request to the site, the Site 
-    should verrify the request and response a echo str, this method is 
-    for convinient.
-    Usage(for Express):
-        router.get('/verify',function(req,res){
+While binding the Web application to your WeChat MP account, WeChat will send a verfification request to the application, the application should verrify the request and response an echo str. This function is a simple encapsulation. 
+
+Usage in Express:
+<pre> router.get('/verify',function(req,res){
              return verifySite(req.query.signature,req.query.timestamp,req.query.nonce)?req.query.echostr:'';
 	});
+</pre>
     
 ###buildWXAuthURL(url,method)
-    method could be 'sns_base' or 'sns_userinfo'
+method could be 'sns_base' or 'sns_userinfo'
 
 ###requreUserInfo()
-    Retrieve the user information.
+Retrieve the user information.
     
 ###requreOpenId(code)
-    WeChat only pass "code" as a query param to web app, app should retrieve the 
-    user infomation from WeChat through WeChat service reqeust.
+WeChat only pass "code" as a query param to web app, app should retrieve the user infomation from WeChat through WeChat service reqeust.
 
 ###requestQRTicket
-    Sometime, app want to generate QR code, WeChat provice a service to help it.
-    This method is used by requestQR.
+This method is used by requestQR.
 
 ###requestQR
-    Generate QR through WeChat service.
+Sometime, app want to generate QR code, WeChat provice a service to help it. Call this function to generate QR through WeChat service.
     
 ###createMenu
-    WeChat MP support customized menu, this is the interface to create it.
+WeChat MP support customized menu, you can create menu through this function in your route function.
 
 ## Todo:
-   ### support more interfaces
-       If you need more interface, please let me know.
+1. to support more interfaces
+
+<strong>If you need more interface, please let me know.</strong>
