@@ -1,6 +1,6 @@
 {
   "name": "wx-mp-api",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "description": "A library for Node.js app access WeChat/Weixin MP platform service.",
   "main": "index.js",
   "scripts": {
